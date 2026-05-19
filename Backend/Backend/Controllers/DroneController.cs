@@ -11,6 +11,7 @@ namespace Backend.Controllers
         [HttpGet]
         public IActionResult Get()
         {
+            var droneConnection = "true";
             var orientation = new Orientation
             {
                 pitch = 10,
@@ -21,7 +22,7 @@ namespace Backend.Controllers
             var battery = new BatteryMetrics
             {
                 batteryPercentage = 82,
-                voltage = 11.1,
+                voltage = 12,
                 estimateRemainingFlightTime = 0
             };
 
@@ -33,7 +34,8 @@ namespace Backend.Controllers
             };
             return Ok(
                 new
-                {
+                { 
+                    droneConnection,
                     orientation,
                     battery,
                     flight

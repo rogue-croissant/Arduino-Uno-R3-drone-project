@@ -1,9 +1,11 @@
-var builder = WebApplication.CreateBuilder(args);
+using Backend;
+
+var builder = WebApplication.CreateBuilder(args); //Creates the ASP.NET application builder.
 
 // Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddHostedService<DroneBackgroundService>();
+builder.Services.AddSignalR();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -14,12 +16,16 @@ builder.Services.AddCors(options =>
         {
             policy.WithOrigins("http://localhost:5174")
                   .AllowAnyHeader()
-                  .AllowAnyMethod();
+                  .AllowAnyMethod()
+                    .AllowCredentials();
         });
 });
 
 var app = builder.Build();
 app.UseCors("AllowReactApp");
+app.UseRouting();
+
+app.MapHub<DroneHub>("/droneHub");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
