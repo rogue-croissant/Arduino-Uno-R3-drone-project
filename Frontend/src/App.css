@@ -1,4 +1,67 @@
-.flight_metrics {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.home-page {
+    display: grid;
+    background: #E6DDF0;
+    ;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    height: 100vh;
+    padding: 20px;
+    color: #5B506C;
+
+    margin: 0;
+
+}
+
+h1 {
+    color: #5B506C;
+}
+
+
+.controller-section {
+
+
+    background: #C9BEDA;
+
+    border-radius: 10px;
+    border: 1px solid #D0BFDD;
+
+
+}
+
+.readings-section {
+
+    display: grid;
+    gap: 20px;
+    background: #D0BFDD;
+    border-radius: 10px;
+    border: 1px solid #D0BFDD;
+
+}
+
+.bottom-section {
+
+    display: flex;
+    gap: 60px;
+    background: #D0BFDD;
+    border-radius: 10px;
+    border: 1px solid #D0BFDD;
+
+}
+
+.movement-controls {}
+
+.controller-pad-section {}
+
+.vertical-control {}
+
+.direction-control {}
+
+.flight-metric-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,7 +69,7 @@
     margin-top: 20px;
 }
 
-.orientation {
+.orientation-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,10 +77,13 @@
     margin-top: 20px;
 }
 
-.battery_metrics {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
+.GPS-section {}
+
+.battery-section {}
+
+.divider {
+    width: 1px;
+    height: 200px;
+    background-color: #ccc;
+    margin: 0 20px;
 }

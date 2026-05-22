@@ -38,49 +38,75 @@ function App() {
 
 
     return (
-        <div>
-            <h1>Drone readings (Live)</h1>
+        <div className="home-page">
+            <div className="controller-section">
+                <h1>Controller section</h1>
 
-            <p>API Connected: {apiConnected ? "Yes" : "No"}</p>
-
-            <p>Altitude: {metrics?.flight?.altitude}</p>
-            <p>Speed: {metrics?.flight?.speed}</p>
-            <p>Battery: {metrics?.battery?.batteryPercentage}</p>
-
-
-
-            <div>
-                <div className="readings">
-                    <h1>Drone readings</h1>
-
-                    <div className="flight_metrics">
-                        <h2>Flight metrics</h2>
-                        <p>altitude: {metrics?.flight?.altitude}</p>
-                        <p>speed: {metrics?.flight?.speed}</p>
-                        <p>flight time: {metrics?.flight?.flightTime}</p>
+                <div className="movement-controls">
+                    <div className="verticle-controls">
+                        <button className="controller-button">Ascend</button>
+                        <button className="controller-button">Descend</button>
+                        <button className="controller-button">Rotate right</button>
+                        <button className="controller-button">Rotate left</button>
                     </div>
-
-                    <div className="orientation">
-                        <h2>Orientation</h2>
-                        <p>pitch: {metrics?.orientation?.pitch}</p>
-                        <p>roll: {metrics?.orientation?.roll}</p>
-                        <p>yaw: {metrics?.orientation?.yaw}</p>
-                    </div>
-
-                    <div className="battery_metrics">
-                        <h2>Battery metrics</h2>
-                        <p>battery percentage: {metrics?.battery?.batteryPercentage}</p>
-                        <p>battery voltage: {metrics?.battery?.voltage}</p>
-                        <p>estimate remaining flight time: {metrics?.battery?.estimateRemainingFlightTime}</p>
-                    </div>
-                    <div className="connection_status">
-                        <h2>Connection status</h2>
-                        <p>Drone Connected: {metrics?.droneConnection}</p>
-                        <p>API Connected: {apiConnected ? "Yes" : "No"}</p>
+                    <div className="divider" />
+                    <div className="direction-controls">
+                        <button className="controller-button">Forward</button>
+                        <button className="controller-button">Right</button>
+                        <button className="controller-button">Backwards</button>
+                        <button className="controller-button">Left</button>
                     </div>
                 </div>
+
+                <div className="controller-pad-section">
+                    <button className="controller-action-buttons">Takeoff</button>
+                    <button className="controller-action-buttons">Land</button>
+                    <button className="controller-action-buttons">Hover</button>
+                </div>
             </div>
-        </div>
+            <div className="readings-section">
+                <div className="flight-metric-section">
+                    <h1>Flight metrics</h1>
+                    <p>Altitude: {metrics ? metrics.flight?.altitude : 'Loading...'}</p>
+                    <p>Speed: {metrics ? metrics.flight?.speed : 'Loading...'}</p>
+                    <p>Flight Time: {metrics ? metrics.flight?.flightTime : 'Loading...'}</p>
+                </div>
+                <div className="orientation-section">
+                    <h1>Orientation</h1>
+                    <p>pitch: {metrics ? metrics?.orientation?.pitch : 'Loading...'}</p>
+                    <p>roll: {metrics ? metrics?.orientation?.roll : 'Loading...'}</p>
+                    <p>yaw: {metrics ? metrics?.orientation?.yaw : 'Loading...'}</p>
+
+                </div>
+
+            </div>
+            <div className="bottom-section">
+                <div className="GPS-section">
+                    <h1>GPS</h1>
+                    <p> latitude:: </p>
+                    <p> longitude:</p>
+                    <p> altitude: </p>
+                    <p> heading: </p>
+                </div>
+                <div className="GPS-summary">
+                    <h1>route summary</h1>
+                    <p> total distance: </p>
+                    <p> est. flight time:</p>
+                    <p> max altitude: </p>
+                </div>
+                <div className="connection-status-section">
+                    <h1>Connection status</h1>
+                    <p>Drone Connected: {metrics?.droneConnection}</p>
+                    <p>API Connected: {apiConnected ? "Yes" : "No"}</p>
+                </div>
+                <div className="battery-section">
+                    <h1>Battery</h1>
+                    <p>battery percentage: {metrics?.battery?.batteryPercentage}</p>
+                    <p>battery voltage: {metrics?.battery?.voltage}</p>
+                    <p>estimate remaining flight time: {metrics?.battery?.estimateRemainingFlightTime}</p>
+                </div>
+            </div>
+        </div >
     )
 }
 
