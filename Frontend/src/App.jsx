@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 
+
 import * as signalR from '@microsoft/signalr';
 
 function App() {
@@ -39,32 +40,56 @@ function App() {
 
     return (
         <div className="home-page">
-            <div className="controller-section">
+         
+            <div className="controller-section section">
                 <h1>Controller section</h1>
 
                 <div className="movement-controls">
-                    <div className="verticle-controls">
-                        <button className="controller-button">Ascend</button>
-                        <button className="controller-button">Descend</button>
-                        <button className="controller-button">Rotate right</button>
-                        <button className="controller-button">Rotate left</button>
+                    <div className="vertical-controls">
+                        <button className="top-button controller-button">Ascend</button>
+                        <button className= "bottom-button controller-button">Descend</button>
+                        <button className="right-button controller-button">Rotate right</button>
+                        <button className="left-button controller-button">Rotate left</button>
                     </div>
                     <div className="divider" />
                     <div className="direction-controls">
-                        <button className="controller-button">Forward</button>
-                        <button className="controller-button">Right</button>
-                        <button className="controller-button">Backwards</button>
-                        <button className="controller-button">Left</button>
+                        <button className="top-button controller-button">Forward</button>
+                        <button className="right-button controller-button">Right</button>
+                        <button className="bottom-button controller-button">Backwards</button>
+                        <button className="left-button controller-button">Left</button>
                     </div>
                 </div>
 
                 <div className="controller-pad-section">
-                    <button className="controller-action-buttons">Takeoff</button>
-                    <button className="controller-action-buttons">Land</button>
-                    <button className="controller-action-buttons">Hover</button>
+                    <button className="controller-button">Takeoff</button>
+                    <button className="controller-button">Land</button>
+                    <button className="controller-button">Hover</button>
+                </div>
+
+            </div>
+             <div className="bottom-section section">
+                <div className="GPS-section">
+                    <h1>GPS</h1>
+                    <p> latitude:: </p>
+                    <p> longitude:</p>
+                    <p> altitude: </p>
+                    <p> heading: </p>
+                </div>
+                <div className="route-summary">
+                    <h1>route summary</h1>
+                    <p> total distance: </p>
+                    <p> est. flight time:</p>
+                    <p> max altitude: </p>
+                </div>
+                
+                <div className="battery-section">
+                    <h1>Battery</h1>
+                    <p>battery percentage: {metrics?.battery?.batteryPercentage}</p>
+                    <p>battery voltage: {metrics?.battery?.voltage}</p>
+                    <p>estimate remaining flight time: {metrics?.battery?.estimateRemainingFlightTime}</p>
                 </div>
             </div>
-            <div className="readings-section">
+            <div className="readings-section section">
                 <div className="flight-metric-section">
                     <h1>Flight metrics</h1>
                     <p>Altitude: {metrics ? metrics.flight?.altitude : 'Loading...'}</p>
@@ -78,34 +103,14 @@ function App() {
                     <p>yaw: {metrics ? metrics?.orientation?.yaw : 'Loading...'}</p>
 
                 </div>
-
-            </div>
-            <div className="bottom-section">
-                <div className="GPS-section">
-                    <h1>GPS</h1>
-                    <p> latitude:: </p>
-                    <p> longitude:</p>
-                    <p> altitude: </p>
-                    <p> heading: </p>
-                </div>
-                <div className="GPS-summary">
-                    <h1>route summary</h1>
-                    <p> total distance: </p>
-                    <p> est. flight time:</p>
-                    <p> max altitude: </p>
-                </div>
                 <div className="connection-status-section">
                     <h1>Connection status</h1>
                     <p>Drone Connected: {metrics?.droneConnection}</p>
                     <p>API Connected: {apiConnected ? "Yes" : "No"}</p>
                 </div>
-                <div className="battery-section">
-                    <h1>Battery</h1>
-                    <p>battery percentage: {metrics?.battery?.batteryPercentage}</p>
-                    <p>battery voltage: {metrics?.battery?.voltage}</p>
-                    <p>estimate remaining flight time: {metrics?.battery?.estimateRemainingFlightTime}</p>
-                </div>
+
             </div>
+           
         </div >
     )
 }

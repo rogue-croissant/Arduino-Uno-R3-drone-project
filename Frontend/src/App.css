@@ -6,60 +6,131 @@
 .home-page {
     display: grid;
     background: #E6DDF0;
-    ;
+    grid-template-rows:auto auto;
     grid-template-columns: 2fr 1fr;
-    gap: 20px;
-    height: 100vh;
+    min-height: 100vh;
     padding: 20px;
     color: #5B506C;
-
     margin: 0;
-
+    row-gap: 30px;
 }
 
 h1 {
     color: #5B506C;
 }
-
-
 .controller-section {
 
-
-    background: #C9BEDA;
-
-    border-radius: 10px;
-    border: 1px solid #D0BFDD;
-
-
+    gap: 5px;
+    grid-column: 1;
+    grid-row: 1;
+    width: 90.8%;
+    
 }
 
 .readings-section {
-
     display: grid;
     gap: 20px;
-    background: #D0BFDD;
-    border-radius: 10px;
-    border: 1px solid #D0BFDD;
 
+
+    grid-column: 2;
+    grid-row:1 / 3;
 }
 
 .bottom-section {
-
     display: flex;
     gap: 60px;
-    background: #D0BFDD;
-    border-radius: 10px;
-    border: 1px solid #D0BFDD;
-
+  
+    grid-column: 1;
+    grid-row: 2;
 }
 
-.movement-controls {}
+.connection-status-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.route-summary{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.section{
+    background: #C9BEDA;
+    padding: 3%;
+    border-radius: 10px;
+    border: 1px solid #D0BFDD;
+}
 
-.controller-pad-section {}
 
-.vertical-control {}
+.movement-controls {
+    display: flex;
+}
 
-.direction-control {}
+.controller-pad-section {
+    display: flex;
+    gap:20px;
+    padding: 3%;
+    width: 40%;
+    height:40%;
+    
+}
+
+.direction-controls {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin: auto;
+}
+.vertical-controls {
+    position: relative;
+    width: 215px;
+    height:215px;
+    margin: auto;
+}
+.top-button{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.bottom-button{
+position: absolute;
+bottom:0%;
+left: 50%;
+ transform: translateX(-50%);
+
+}
+.right-button{
+position: absolute;
+right:0%;
+top: 42%;
+
+}
+.left-button{
+position: absolute;
+top: 42%;
+left: 0;
+}
+
+.controller-button{
+    border-radius: 15px;
+    height: 50px;
+    width:100px;
+    background-color: #B1A4C3;
+    border:1px solid #5B506C;
+    color: #5B506C;
+
+}
+.controller-button:hover{
+    background-color: #5B506C;
+    color:#B1A4C3;
+    border-color: #B1A4C3;
+    border-width: 1px solid black;
+}
 
 .flight-metric-section {
     display: flex;
@@ -77,13 +148,25 @@ h1 {
     margin-top: 20px;
 }
 
-.GPS-section {}
+.GPS-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
 
-.battery-section {}
+.battery-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
 
 .divider {
     width: 1px;
-    height: 200px;
-    background-color: #ccc;
+    height: 180px;
+    background-color: #5B506C;
     margin: 0 20px;
 }
