@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+        box-sizing: border-box;
 }
 
 .home-page {
@@ -11,37 +12,53 @@
     min-height: 100vh;
     padding: 20px;
     color: #5B506C;
-    margin: 0;
-    row-gap: 30px;
+    gap: 20px;
 }
 
 h1 {
     color: #5B506C;
 }
-.controller-section {
-
-    gap: 5px;
+.controller-section{
+    display: grid;
     grid-column: 1;
     grid-row: 1;
-    width: 90.8%;
-    
 }
 
 .readings-section {
-    display: grid;
-    gap: 20px;
-
-
+   display:grid;
     grid-column: 2;
     grid-row:1 / 3;
+}
+.reading-section > div {
+    flex: 1;
 }
 
 .bottom-section {
     display: flex;
-    gap: 60px;
-  
+    gap:30px;
     grid-column: 1;
     grid-row: 2;
+ 
+}
+.bottom-section > div{
+    flex: 1;
+}
+
+.movement-controls {
+    display: flex;
+}
+
+.controller-pad-section {
+    display: flex;
+    gap:20px;
+    padding: 20px;  
+}
+
+.section{
+    background: #C9BEDA;
+    padding: 24px;
+    border-radius: 10px;
+    border: 1px solid #D0BFDD;
 }
 
 .connection-status-section{
@@ -51,6 +68,7 @@ h1 {
     justify-content: center;
     margin-top: 20px;
 }
+
 .route-summary{
     display: flex;
     flex-direction: column;
@@ -58,61 +76,44 @@ h1 {
     justify-content: center;
     margin-top: 20px;
 }
-.section{
-    background: #C9BEDA;
-    padding: 3%;
-    border-radius: 10px;
-    border: 1px solid #D0BFDD;
-}
-
-
-.movement-controls {
-    display: flex;
-}
-
-.controller-pad-section {
-    display: flex;
-    gap:20px;
-    padding: 3%;
-    width: 40%;
-    height:40%;
-    
-}
 
 .direction-controls {
     position: relative;
-    width: 160px;
-    height: 160px;
+    width: 280px;
+    height: 150px;
     margin: auto;
 }
+
 .vertical-controls {
     position: relative;
-    width: 215px;
-    height:215px;
+    width: 280px;
+    height:150px;
     margin: auto;
 }
+
 .top-button{
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
 }
+
 .bottom-button{
 position: absolute;
 bottom:0%;
 left: 50%;
- transform: translateX(-50%);
-
+transform: translateX(-50%);
 }
+
 .right-button{
 position: absolute;
 right:0%;
-top: 42%;
-
+top: 33%;
 }
+
 .left-button{
 position: absolute;
-top: 42%;
+top: 33%;
 left: 0;
 }
 
@@ -166,7 +167,7 @@ left: 0;
 
 .divider {
     width: 1px;
-    height: 180px;
+    height: 150px;
     background-color: #5B506C;
     margin: 0 20px;
 }

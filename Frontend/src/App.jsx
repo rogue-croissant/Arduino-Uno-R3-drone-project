@@ -41,10 +41,8 @@ function App() {
     return (
         <div className="home-page">
          
-            <div className="controller-section section">
-                <h1>Controller section</h1>
-
-                <div className="movement-controls">
+            <div className="controller-section">
+                <div className="movement-controls section">
                     <div className="vertical-controls">
                         <button className="top-button controller-button">Ascend</button>
                         <button className= "bottom-button controller-button">Descend</button>
@@ -60,50 +58,52 @@ function App() {
                     </div>
                 </div>
 
-                <div className="controller-pad-section">
+                <div className="controller-pad-section section">
                     <button className="controller-button">Takeoff</button>
                     <button className="controller-button">Land</button>
                     <button className="controller-button">Hover</button>
                 </div>
-
             </div>
-             <div className="bottom-section section">
-                <div className="GPS-section">
+
+             <div className="bottom-section">
+                <div className="GPS-section section">
                     <h1>GPS</h1>
                     <p> latitude:: </p>
                     <p> longitude:</p>
                     <p> altitude: </p>
                     <p> heading: </p>
                 </div>
-                <div className="route-summary">
+                <div className="route-summary section">
                     <h1>route summary</h1>
                     <p> total distance: </p>
                     <p> est. flight time:</p>
                     <p> max altitude: </p>
                 </div>
                 
-                <div className="battery-section">
+                <div className="battery-section section">
                     <h1>Battery</h1>
                     <p>battery percentage: {metrics?.battery?.batteryPercentage}</p>
                     <p>battery voltage: {metrics?.battery?.voltage}</p>
                     <p>estimate remaining flight time: {metrics?.battery?.estimateRemainingFlightTime}</p>
                 </div>
             </div>
-            <div className="readings-section section">
-                <div className="flight-metric-section">
+            
+            <div className="readings-section ">
+               
+                <div className="flight-metric-section section">
                     <h1>Flight metrics</h1>
                     <p>Altitude: {metrics ? metrics.flight?.altitude : 'Loading...'}</p>
                     <p>Speed: {metrics ? metrics.flight?.speed : 'Loading...'}</p>
                     <p>Flight Time: {metrics ? metrics.flight?.flightTime : 'Loading...'}</p>
                 </div>
-                <div className="orientation-section">
+                <div className="orientation-section section">
                     <h1>Orientation</h1>
                     <p>pitch: {metrics ? metrics?.orientation?.pitch : 'Loading...'}</p>
                     <p>roll: {metrics ? metrics?.orientation?.roll : 'Loading...'}</p>
                     <p>yaw: {metrics ? metrics?.orientation?.yaw : 'Loading...'}</p>
 
                 </div>
-                <div className="connection-status-section">
+                <div className="connection-status-section section">
                     <h1>Connection status</h1>
                     <p>Drone Connected: {metrics?.droneConnection}</p>
                     <p>API Connected: {apiConnected ? "Yes" : "No"}</p>
