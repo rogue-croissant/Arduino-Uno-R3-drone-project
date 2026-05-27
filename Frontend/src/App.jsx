@@ -39,10 +39,10 @@ function App() {
 
 
     return (
-        <div className="home-page">
-         
-            <div className="controller-section">
-                <div className="movement-controls section">
+    <div className="home-page"> 
+        <div className="controller-section">
+               <h1>controller section</h1>
+            <div className="movement-controls">
                     <div className="vertical-controls">
                         <button className="top-button controller-button">Ascend</button>
                         <button className= "bottom-button controller-button">Descend</button>
@@ -55,17 +55,10 @@ function App() {
                         <button className="right-button controller-button">Right</button>
                         <button className="bottom-button controller-button">Backwards</button>
                         <button className="left-button controller-button">Left</button>
-                    </div>
-                </div>
-
-                <div className="controller-pad-section section">
-                    <button className="controller-button">Takeoff</button>
-                    <button className="controller-button">Land</button>
-                    <button className="controller-button">Hover</button>
-                </div>
+                    </div>  
             </div>
-
-             <div className="bottom-section">
+        </div>
+            <div className="bottom-section">
                 <div className="GPS-section section">
                     <h1>GPS</h1>
                     <p> latitude:: </p>
@@ -89,7 +82,7 @@ function App() {
             </div>
             
             <div className="readings-section ">
-               
+               <h1>reading section</h1>
                 <div className="flight-metric-section section">
                     <h1>Flight metrics</h1>
                     <p>Altitude: {metrics ? metrics.flight?.altitude : 'Loading...'}</p>
@@ -108,10 +101,16 @@ function App() {
                     <p>Drone Connected: {metrics?.droneConnection}</p>
                     <p>API Connected: {apiConnected ? "Yes" : "No"}</p>
                 </div>
-
-            </div>
+                <div className="controller-pad section">
+                    <h2>Quick actions</h2>
+                    
+                    <button className="controller-button">Takeoff</button>
+                    <button className="controller-button">Land</button>
+                    <button className="controller-button">Hover</button>
+                </div>
+        </div>
            
-        </div >
+    </div >
     )
 }
 

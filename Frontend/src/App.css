@@ -1,120 +1,122 @@
 * {
     margin: 0;
     padding: 0;
-        box-sizing: border-box;
+    box-sizing: border-box;
 }
-
 .home-page {
     display: grid;
     background: #E6DDF0;
-    grid-template-rows:auto auto;
+    grid-template-rows: auto auto;
     grid-template-columns: 2fr 1fr;
     min-height: 100vh;
     padding: 20px;
     color: #5B506C;
-    gap: 20px;
+    gap:20px;
+
 }
 
 h1 {
     color: #5B506C;
 }
-.controller-section{
-    display: grid;
-    grid-column: 1;
-    grid-row: 1;
+.controller-section {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background: #C9BEDA;
+    padding: 10px;
+}
+.controller-section h1{
+    padding-bottom: 10px;
+}
+.movement-controls {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    background-color: #E6DDF0;
+    border-radius: 10px;
+    flex:1;
 }
 
 .readings-section {
-   display:grid;
+    display:flex;
+    flex-direction: column;
     grid-column: 2;
-    grid-row:1 / 3;
+    grid-row:1/3;
+    background-color: #C9BEDA;
+    align-items:stretch;
+    border-radius: 10px;
+    gap: 10px;
+    padding:10px;
 }
-.reading-section > div {
+.readings-section > div {
     flex: 1;
 }
 
 .bottom-section {
     display: flex;
-    gap:30px;
     grid-column: 1;
     grid-row: 2;
- 
+    background-color: #C9BEDA;
+    border-radius: 10px;
+    align-items: stretch;
+    padding: 10px;
+    gap: 10px;
+}
+.controller-pad {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    padding: 10px;
+    
+     
 }
 .bottom-section > div{
     flex: 1;
 }
 
-.movement-controls {
-    display: flex;
-}
-
-.controller-pad-section {
-    display: flex;
-    gap:20px;
-    padding: 20px;  
-}
-
 .section{
-    background: #C9BEDA;
-    padding: 24px;
+    background: #E6DDF0;
     border-radius: 10px;
     border: 1px solid #D0BFDD;
 }
 
-.connection-status-section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-}
 
-.route-summary{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.direction-controls {
+.direction-controls,
+.vertical-controls{
     position: relative;
     width: 280px;
-    height: 150px;
-    margin: auto;
-}
-
-.vertical-controls {
-    position: relative;
-    width: 280px;
-    height:150px;
-    margin: auto;
+    height: 280px;
+    background-color: #C9BEDA;
+    border-radius: 100%;
 }
 
 .top-button{
     position: absolute;
-    top: 0;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .bottom-button{
 position: absolute;
-bottom:0%;
+bottom:10px;
 left: 50%;
 transform: translateX(-50%);
 }
 
 .right-button{
 position: absolute;
-right:0%;
-top: 33%;
+right:10px;
+top: 40%;
 }
 
 .left-button{
 position: absolute;
-top: 33%;
-left: 0;
+top: 40%;
+left: 10px;
 }
 
 .controller-button{
@@ -133,36 +135,16 @@ left: 0;
     border-width: 1px solid black;
 }
 
-.flight-metric-section {
+.flight-metric-section,
+.orientation-section, 
+.GPS-section,
+.battery-section, 
+.route-summary,
+.connection-status-section{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-}
-
-.orientation-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.GPS-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.battery-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
 }
 
 .divider {
