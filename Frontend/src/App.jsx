@@ -41,7 +41,7 @@ function App() {
     return (
     <div className="home-page"> 
         <div className="controller-section">
-               <h1>controller section</h1>
+               <h2>Controller</h2>
             <div className="movement-controls">
                     <div className="vertical-controls">
                         <button className="top-button controller-button">Ascend</button>
@@ -49,7 +49,7 @@ function App() {
                         <button className="right-button controller-button">Rotate right</button>
                         <button className="left-button controller-button">Rotate left</button>
                     </div>
-                    <div className="divider" />
+                    <div className="divider-controller" />
                     <div className="direction-controls">
                         <button className="top-button controller-button">Forward</button>
                         <button className="right-button controller-button">Right</button>
@@ -60,53 +60,68 @@ function App() {
         </div>
             <div className="bottom-section">
                 <div className="GPS-section section">
-                    <h1>GPS</h1>
+                    <h3>GPS</h3>
                     <p> latitude:: </p>
                     <p> longitude:</p>
                     <p> altitude: </p>
                     <p> heading: </p>
                 </div>
+
                 <div className="route-summary section">
-                    <h1>route summary</h1>
+                    <h3>Route summary</h3>
                     <p> total distance: </p>
                     <p> est. flight time:</p>
                     <p> max altitude: </p>
                 </div>
                 
                 <div className="battery-section section">
-                    <h1>Battery</h1>
+                    <h3>Battery</h3>
                     <p>battery percentage: {metrics?.battery?.batteryPercentage}</p>
                     <p>battery voltage: {metrics?.battery?.voltage}</p>
-                    <p>estimate remaining flight time: {metrics?.battery?.estimateRemainingFlightTime}</p>
+                    <p>est. remaining flight time: {metrics?.battery?.estimateRemainingFlightTime}</p>   
                 </div>
             </div>
             
             <div className="readings-section ">
-               <h1>reading section</h1>
+               <h2>Readings</h2>
                 <div className="flight-metric-section section">
-                    <h1>Flight metrics</h1>
+                    <h3>Flight metrics</h3>
+                    <div className="content-alignment">
                     <p>Altitude: {metrics ? metrics.flight?.altitude : 'Loading...'}</p>
+                    <div className="divider" />
                     <p>Speed: {metrics ? metrics.flight?.speed : 'Loading...'}</p>
+                    <div className="divider" />
                     <p>Flight Time: {metrics ? metrics.flight?.flightTime : 'Loading...'}</p>
                 </div>
-                <div className="orientation-section section">
-                    <h1>Orientation</h1>
-                    <p>pitch: {metrics ? metrics?.orientation?.pitch : 'Loading...'}</p>
-                    <p>roll: {metrics ? metrics?.orientation?.roll : 'Loading...'}</p>
-                    <p>yaw: {metrics ? metrics?.orientation?.yaw : 'Loading...'}</p>
-
                 </div>
+                
+                <div className="orientation-section section">
+                    <h3>Orientation</h3>
+                    <div className="content-alignment">
+                    <p>Pitch: {metrics ? metrics?.orientation?.pitch : 'Loading...'}</p>
+                    <div className="divider" />
+                    <p>Roll: {metrics ? metrics?.orientation?.roll : 'Loading...'}</p>
+                    <div className="divider" />
+                    <p>Yaw: {metrics ? metrics?.orientation?.yaw : 'Loading...'}</p>
+                    </div>
+                </div>
+
                 <div className="connection-status-section section">
-                    <h1>Connection status</h1>
+                    <h3>Connection status</h3>
+                    <div className="content-alignment">
                     <p>Drone Connected: {metrics?.droneConnection}</p>
+                    <div className="divider" />
                     <p>API Connected: {apiConnected ? "Yes" : "No"}</p>
                 </div>
+                </div>
+
                 <div className="controller-pad section">
-                    <h2>Quick actions</h2>
-                    
+                    <h3>Quick actions</h3>
+                    <div className="content-alignment">
                     <button className="controller-button">Takeoff</button>
                     <button className="controller-button">Land</button>
                     <button className="controller-button">Hover</button>
+                    </div>
                 </div>
         </div>
            

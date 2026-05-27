@@ -12,12 +12,12 @@
     padding: 20px;
     color: #5B506C;
     gap:20px;
-
 }
 
 h1 {
     color: #5B506C;
 }
+
 .controller-section {
     display: flex;
     flex-direction: column;
@@ -25,14 +25,15 @@ h1 {
     background: #C9BEDA;
     padding: 10px;
 }
+
 .controller-section h1{
     padding-bottom: 10px;
 }
+
 .movement-controls {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    
     background-color: #E6DDF0;
     border-radius: 10px;
     flex:1;
@@ -49,6 +50,7 @@ h1 {
     gap: 10px;
     padding:10px;
 }
+
 .readings-section > div {
     flex: 1;
 }
@@ -63,15 +65,19 @@ h1 {
     padding: 10px;
     gap: 10px;
 }
+
 .controller-pad {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap:10px;
     padding: 10px;
-    
-     
+}
+
+.content-alignment{
+    display: flex;
+    gap: 10px;
 }
 .bottom-section > div{
     flex: 1;
@@ -147,9 +153,14 @@ left: 10px;
     justify-content: center;
 }
 
+.divider-controller {
+    width: 1px;
+    height: 280px;
+    background-color: #5B506C;
+
+}
 .divider {
     width: 1px;
-    height: 150px;
+    height: 20px;
     background-color: #5B506C;
-    margin: 0 20px;
 }
