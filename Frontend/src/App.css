@@ -56,8 +56,6 @@ h1 {
     flex: 1;
 }
 
-
-
 .bottom-section {
     display: flex;
     grid-column: 1;
@@ -69,19 +67,11 @@ h1 {
     gap: 10px;
 }
 
-.controller-pad {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px;
-}
-
 .content-alignment {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr 1px 1fr;
+    width: 100%;
+
     align-items: center;
 }
 
@@ -152,41 +142,74 @@ h1 {
 .orientation-section,
 .GPS-section,
 .battery-section,
-.route-summary,
-.connection-status-section {
+.route-summary {
     display: flex;
     flex-direction: column;
 }
 
-.icon {
-    width: 30px;
-    height: 30px;
+.connection-status-section {
+    display: flex;
+    flex-direction: column;
+
 }
-.metric-item{
+
+.connection-content {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    flex: 0.8;
+    padding: 0px;
+}
+
+.icon {
+    width: 33px;
+    height: 33px;
+}
+
+.metric-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-.metric-value{
+    padding: 10px;
 
 }
-.metric-title{
-   
+
+.metric-value {
+    font-weight: bold;
+    font-size: 1em;
 }
-.flight-metric-section h3{
-    
+
+
+.metric-title {
+    font-size: 0.8em;
+}
+
+.quick-action-alignment {
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+    padding: 35px 0px 0px 0px;
+}
+
+.flight-metric-section h3,
+.orientation-section h3,
+.connection-status-section h3,
+.controller-pad h3 {
+    padding: 12px 0px 0px 15px;
+    font-size: 1em;
 }
 
 .divider-controller {
     width: 1px;
-    height: 280px;
+    height: 85%;
+    min-height: 280px;
     background-color: #5B506C;
 
 }
 
 .divider {
     width: 1px;
-    height: 80px;
+
     background-color: #5B506C;
+    align-self: stretch;
 }
