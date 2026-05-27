@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .home-page {
     display: grid;
     background: #E6DDF0;
@@ -11,7 +12,7 @@
     min-height: 100vh;
     padding: 20px;
     color: #5B506C;
-    gap:20px;
+    gap: 20px;
 }
 
 h1 {
@@ -26,8 +27,13 @@ h1 {
     padding: 10px;
 }
 
-.controller-section h1{
+.controller-section h1 {
     padding-bottom: 10px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
 }
 
 .movement-controls {
@@ -36,22 +42,22 @@ h1 {
     align-items: center;
     background-color: #E6DDF0;
     border-radius: 10px;
-    flex:1;
+    flex: 1;
 }
 
 .readings-section {
-    display:flex;
+    display: flex;
     flex-direction: column;
     grid-column: 2;
-    grid-row:1/3;
+    grid-row: 1/3;
     background-color: #C9BEDA;
-    align-items:stretch;
+    align-items: stretch;
     border-radius: 10px;
     gap: 10px;
-    padding:10px;
+    padding: 10px;
 }
 
-.readings-section > div {
+.readings-section>div {
     flex: 1;
 }
 
@@ -71,19 +77,20 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap:10px;
+    gap: 10px;
     padding: 10px;
 }
 
-.content-alignment{
+.content-alignment {
     display: flex;
     gap: 10px;
 }
-.bottom-section > div{
+
+.bottom-section>div {
     flex: 1;
 }
 
-.section{
+.section {
     background: #E6DDF0;
     border-radius: 10px;
     border: 1px solid #D0BFDD;
@@ -91,7 +98,7 @@ h1 {
 
 
 .direction-controls,
-.vertical-controls{
+.vertical-controls {
     position: relative;
     width: 280px;
     height: 280px;
@@ -99,54 +106,55 @@ h1 {
     border-radius: 100%;
 }
 
-.top-button{
+.top-button {
     position: absolute;
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.bottom-button{
-position: absolute;
-bottom:10px;
-left: 50%;
-transform: translateX(-50%);
+.bottom-button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.right-button{
-position: absolute;
-right:10px;
-top: 40%;
+.right-button {
+    position: absolute;
+    right: 10px;
+    top: 40%;
 }
 
-.left-button{
-position: absolute;
-top: 40%;
-left: 10px;
+.left-button {
+    position: absolute;
+    top: 40%;
+    left: 10px;
 }
 
-.controller-button{
+.controller-button {
     border-radius: 15px;
     height: 50px;
-    width:100px;
+    width: 100px;
     background-color: #B1A4C3;
-    border:1px solid #5B506C;
+    border: 1px solid #5B506C;
     color: #5B506C;
 
 }
-.controller-button:hover{
+
+.controller-button:hover {
     background-color: #5B506C;
-    color:#B1A4C3;
+    color: #B1A4C3;
     border-color: #B1A4C3;
     border-width: 1px solid black;
 }
 
 .flight-metric-section,
-.orientation-section, 
+.orientation-section,
 .GPS-section,
-.battery-section, 
+.battery-section,
 .route-summary,
-.connection-status-section{
+.connection-status-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -159,6 +167,7 @@ left: 10px;
     background-color: #5B506C;
 
 }
+
 .divider {
     width: 1px;
     height: 20px;
